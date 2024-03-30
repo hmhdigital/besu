@@ -1,0 +1,34 @@
+{
+	"name": "besu",
+	"version": "0.9.0",
+	"description": "A WordPress starter theme for bespoke projects",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hmhdigital/besu"
+	},
+	"author": "Rashad Hawkins",
+	"license": "GPL-3.0-or-later",
+	"devDependencies": {
+		"@tailwindcss/forms": "^0.5.7",
+		"@wordpress/scripts": "^27.4.0",
+		"alpinejs": "^3.13.7",
+		"autoprefixer": "^10.4.18",
+		"browser-sync": "^3.0.2",
+		"dir-archiver": "^2.1.0",
+		"glob": "^10.3.10",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.36",
+		"postcss-cli": "^11.0.0",
+		"postcss-import": "^16.0.1",
+		"prettier-plugin-tailwindcss": "^0.5.12",
+		"tailwindcss": "^3.4.1",
+		"webpack-cli": "^5.1.4"
+	},
+	"scripts": {
+		"bundle": "dir-archiver --src . --dest ../arbol.zip --exclude .DS_Store .editorconfig .eslintignore .eslintrc.js tailwind.config.js postcss.config.js prettier.config.js .git .gitattributes .github .gitignore README.md local.example.json local.json composer.json composer.lock node_modules src package-lock.json package.json phpcs.xml.dist",
+		"compile": "wp-scripts start src/js/index.js ",
+		"build": "wp-scripts build src/js/index.js ",
+		"develop": "npm-run-all --parallel compile sync",
+		"sync": "browser-sync start --proxy 'besu.local' --browser 'google chrome' --files 'build/*', './**/*.php', './**/*.twig'"
+	}
+}
