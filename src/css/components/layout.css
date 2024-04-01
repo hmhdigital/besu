@@ -1,3 +1,214 @@
-.header {
-	@apply p-4
+/* Main Container
+--------------------------------------------- */
+.site {
+	@apply container flex flex-col gap-4;
+}
+
+.site-header {
+	@apply py-4 flex justify-between items-center;
+}
+
+/* Navigation
+--------------------------------------------- */
+.main-navigation {
+	@apply block w-full flex justify-end;
+}
+
+.main-navigation ul {
+	@apply hidden list-none m-0 pl-0 gap-2 flex;
+}
+
+.main-navigation ul ul {
+	@apply shadow float-left absolute flex flex-col gap-4 top-full -left-999 z-99;
+}
+
+.main-navigation ul ul ul {
+	@apply -left-999 top-0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	@apply block left-auto;
+}
+
+.main-navigation ul ul a {
+	@apply w-52;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	@apply left-auto;
+}
+
+.main-navigation li {
+	@apply relative;
+}
+
+.main-navigation a {
+	@apply block no-underline;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	@apply block;
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle {
+		@apply hidden;
+	}
+
+	.main-navigation ul {
+		@apply flex;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main
+.posts-navigation,
+.site-main
+.post-navigation {
+	@apply mt-0 mx-0 mb-6;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+	@apply flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	@apply grow shrink basis-6/12;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	@apply text-end grow shrink basis-6/12;
+}
+
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+	@apply block;
+}
+
+.post,
+.page {
+	@apply mt-0 mx-0 mb-6;
+}
+
+.updated:not(.published) {
+	@apply hidden;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	@apply mt-6 mx-0 mb-0;
+}
+
+.page-links {
+	@apply clear-both mt-0 mx-0 mb-6;
+}
+
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+	@apply break-words;
+}
+
+.bypostauthor {
+	@apply block;
+}
+
+/* Widgets
+--------------------------------------------- */
+.widget {
+	@apply mt-0 mx-0 mb-6;
+}
+
+.widget select {
+	@apply max-w-full;
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	@apply border-0 mb-0 mt-0 p-0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	@apply inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+	@apply mb-6 max-w-full;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	@apply block ml-auto mr-auto;
+}
+
+.wp-caption .wp-caption-text {
+	@apply mx-3.5 my-0;
+}
+
+.wp-caption-text {
+	@apply text-center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+	@apply mb-6 grid gap-6;
+}
+
+.gallery-item {
+	@apply inline-block text-center w-full;
+}
+
+.gallery-columns-2 {
+	@apply grid-cols-2;
+}
+
+.gallery-columns-3 {
+	@apply grid-cols-3;
+}
+
+.gallery-columns-4 {
+	@apply grid-cols-4;
+}
+
+.gallery-columns-5 {
+	@apply grid-cols-5;
+}
+
+.gallery-columns-6 {
+	@apply grid-cols-6;
+}
+
+.gallery-columns-7 {
+	@apply grid-cols-7;
+}
+
+.gallery-columns-8 {
+	@apply grid-cols-8;
+}
+
+.gallery-columns-9 {
+	@apply grid-cols-9;
+}
+
+.gallery-caption {
+	@apply block;
 }

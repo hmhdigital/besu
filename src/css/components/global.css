@@ -2,6 +2,244 @@
 	@apply invisible
 }
 
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply clear-both;
+}
+
+p {
+	@apply mb-6;
+}
+
+dfn,
+cite,
+em,
+i {
+	@apply italic;
+}
+
+blockquote {
+	@apply mx-0 my-6;
+}
+
+address {
+	@apply mt-0 mx-0 mb-6;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+.site-title,
+.entry-title,
+.page-title {
+	@apply font-bold text-4xl;
+}
+
+
+/* Elements
+--------------------------------------------- */
+
 body {
-    @apply relative font-sans-serif
+    @apply bg-white relative font-sans-serif;
+}
+
+hr {
+	@apply border-0 h-px mb-6 bg-gray-300;
+}
+
+ul,
+ol {
+	@apply mt-0 mr-0 mb-6 ml-12;
+}
+
+ul {
+	@apply list-disc;
+}
+
+ol {
+	@apply list-decimal;
+}
+
+li > ul,
+li > ol {
+	@apply mb-0 ml-6;
+}
+
+dt {
+	@apply font-bold;
+}
+
+dd {
+	@apply mt-0 mx-6 mb-6;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	@apply max-w-full;
+}
+
+img {
+	@apply h-auto max-w-full;
+}
+
+figure {
+	@apply mx-1 my-0;
+}
+
+table {
+	@apply mt-0 mx-0 mb-6 w-full;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	color: #4169e1;
+}
+
+a:visited {
+	color: #800080;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #191970;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/* Buttons & Forms
+--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	line-height: 1;
+	padding: 0.6em 1em 0.4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	@apply text-gray-400 border border-gray-300 rounded p-1;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	@apply text-gray-900;
+}
+
+select {
+	@apply border border-gray-300;
+}
+
+textarea {
+	@apply w-full;
 }
