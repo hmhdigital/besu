@@ -91,6 +91,11 @@
 				"name": "Secondary"
 			  },
 			  {
+				"slug": "accent",
+				"color": "027F8C",
+				"name": "Accent"
+			  },
+			  {
 				"slug": "white",
 				"color": "#ffffff",
 				"name": "White"
