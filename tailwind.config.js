@@ -32,7 +32,8 @@ theme.settings.typography.fontFamilies.forEach(fam => {
 
 module.exports = {
 	content: [
-		'./**/*.php',
+		'./inc/**/*.php',
+		'./template-parts/**/*.php',
 	].concat(glob.sync('./*.php')),
 	// have to use glob sync because otherwise base folder becomes tw dependency and infinite loop because of index.asset.php
 	// glob returns array of actual files and this way build folder is definitively ignored
@@ -49,12 +50,15 @@ module.exports = {
 				'screen-50': '50vh',
 			},
 			zIndex: {
-				'-10': '-10',
-				'-20': '-20',
-				'-30': '-30',
+				'99': '9999',
+				'max': '100000'
+
 			},
 			screens: {
 				'xs': '360px'
+			},
+			spacing: {
+				'999': '999rem'
 			}
 		},
 		container: {
