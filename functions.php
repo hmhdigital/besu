@@ -7,10 +7,15 @@
  * @package Bēsu
  */
 
+ /**
+ * Constants defined here
+ */
 if ( ! defined( 'BESU_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( 'BESU_VERSION', '1.0.0' );
 }
+
+define( 'BESU_THEME_DIR', __DIR__ );
 
  /**
  * Navi composer autoload
@@ -31,11 +36,6 @@ require get_template_directory() . '/inc/bootstrap.php';
 require get_template_directory() . '/inc/custom-menu.php';
 
 /**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -51,31 +51,27 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * ACF Blocks Configuration
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
-}
+require 'inc/acf-config.php';
+
+/**
+ * ACF Block Registration
+ */
+require 'inc/register-blocks.php';
 
 /**
  * Enqueue scripts and styles.
  */
 function besu_scripts() {
-
+	$ASSET_INFO = include get_stylesheet_directory() . '/build/theme/index.asset.php';
 	 // Loads bundled theme CSS.
-	 wp_enqueue_style( 'besu-css-styles', get_template_directory_uri() . '/build/index.css',
-	 array(),
-	 (include get_template_directory() . '/build/index.asset.php')['version']
-	 );
+	 wp_enqueue_style( 'besu-css-styles', get_stylesheet_directory_uri() . '/build/theme/index.css', array(), $ASSET_INFO['version'] );
 	 wp_style_add_data( 'besu-style', 'rtl', 'replace' );
 
 
 	// Loads bundled theme JS.
-	wp_enqueue_script('besu-js-scripts', get_template_directory_uri() . '/build/index.js',
-	(include get_template_directory() . '/build/index.asset.php')['dependencies'],
-	(include get_template_directory() . '/build/index.asset.php')['version'],
-	true
-	);
+	wp_enqueue_script( 'besu-js-scripts', get_stylesheet_directory_uri() . '/build/theme/index.js', $ASSET_INFO['dependencies'], $ASSET_INFO['version'] );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

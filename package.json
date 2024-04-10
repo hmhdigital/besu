@@ -25,10 +25,14 @@
 		"webpack-cli": "^5.1.4"
 	},
 	"scripts": {
-		"bundle": "dir-archiver --src . --dest ../arbol.zip --exclude .DS_Store .editorconfig .eslintignore .eslintrc.js tailwind.config.js postcss.config.js prettier.config.js .git .gitattributes .github .gitignore README.md local.example.json local.json composer.json composer.lock node_modules src package-lock.json package.json phpcs.xml.dist",
-		"compile": "wp-scripts start src/js/index.js ",
-		"build": "wp-scripts build src/js/index.js ",
-		"develop": "npm-run-all --parallel compile sync",
-		"sync": "browser-sync start --proxy 'besu.local' --browser 'google chrome' --files 'build/*', './**/*.php', './**/*.twig'"
+		"bundle": "dir-archiver --src . --dest ../besu.zip --exclude .DS_Store .editorconfig .eslintignore .eslintrc.js tailwind.config.js postcss.config.js prettier.config.js .git .gitattributes .github .gitignore README.md local.example.json local.json composer.json composer.lock node_modules src package-lock.json package.json phpcs.xml.dist",
+		"theme:compile": "wp-scripts start src/js/index.js --output-path=build/theme",
+		"theme:build": "wp-scripts build src/js/index.js --output-path=build/theme",
+    "blocks:compile": "wp-scripts start --webpack-src-dir=blocks --webpack-copy-php --output-path=build/blocks",
+    "blocks:build": "wp-scripts build --webpack-src-dir=blocks --webpack-copy-php --output-path=build/blocks",
+    "compile": "npm-run-all --parallel theme:compile blocks:compile",
+    "build": "npm-run-all --parallel theme:build blocks:build",
+		"develop": "npm-run-all --parallel theme:compile blocks:compile sync",
+		"sync": "browser-sync start --proxy 'besu.local' --browser 'google chrome' --files 'build/*', './**/*.php'"
 	}
 }
