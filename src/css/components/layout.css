@@ -1,7 +1,11 @@
 /* Main Container
 --------------------------------------------- */
 .site {
-	@apply container flex flex-col gap-4;
+	max-width: calc( var(--wp--custom--layout--wide) + calc( 2 * var(--wp--custom--layout--padding ) ) );
+	margin: 0 auto;
+	padding-left: var(--wp--custom--layout--padding);
+	padding-right: var(--wp--custom--layout--padding);
+	@apply flex flex-col;
 }
 
 .site-header {
@@ -15,7 +19,7 @@
 }
 
 .main-navigation ul {
-	@apply hidden list-none m-0 pl-0 gap-2 flex;
+	@apply hidden list-none m-0 pl-0 gap-4 flex;
 }
 
 .main-navigation ul ul {
@@ -134,6 +138,10 @@
 
 .widget select {
 	@apply max-w-full;
+}
+
+.widget-area {
+	max-width: var(--wp--custom--layout--sidebar);
 }
 
 /* Media
