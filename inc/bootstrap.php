@@ -68,18 +68,6 @@ function besu_setup() {
 		)
 	);
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters(
-			'besu_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);
-
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -97,6 +85,14 @@ function besu_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	/**
+	 * Enable support for block templates.
+	 *
+	 * @link https://learn.wordpress.org/tutorial/using-block-template-parts-in-classic-themes/
+	 */
+	add_theme_support( 'block-template-parts' );
+
 }
 add_action( 'after_setup_theme', 'besu_setup' );
 
