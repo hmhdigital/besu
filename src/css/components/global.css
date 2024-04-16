@@ -80,7 +80,12 @@ big {
 .site-title,
 .entry-title,
 .page-title {
-	@apply font-bold text-4xl;
+
+	font-size: var(--wp--preset--font-size--7-xl);
+	font-family: var(--wp--preset--font-family--sans-serif);
+	font-weight: 700;
+	line-height: var(--wp--custom--typography--line-height--tight);
+	/* TODO: Add theme.json variables for headings */
 }
 
 
