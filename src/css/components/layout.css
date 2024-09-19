@@ -1,11 +1,11 @@
 /* Main Container
 --------------------------------------------- */
 .site {
-	max-width: calc( var(--wp--custom--layout--wide) + calc( 2 * var(--wp--custom--layout--padding ) ) );
+	max-width: calc( var(--wp--custom--layout--content) + calc( 2 * var(--wp--custom--layout--padding ) ) );
 	margin: 0 auto;
 	padding-left: var(--wp--custom--layout--padding);
 	padding-right: var(--wp--custom--layout--padding);
-	@apply flex flex-col;
+
 }
 
 .site-header {
@@ -68,6 +68,9 @@
 		@apply flex;
 	}
 }
+
+/* Comments and Pagination
+--------------------------------------------- */
 
 .site-main .comment-navigation,
 .site-main
