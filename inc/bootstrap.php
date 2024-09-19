@@ -97,18 +97,6 @@ function besu_setup() {
 add_action( 'after_setup_theme', 'besu_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function besu_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'besu_content_width', 960 );
-}
-add_action( 'after_setup_theme', 'besu_content_width', 0 );
-
-/**
  * Register widget areas.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
