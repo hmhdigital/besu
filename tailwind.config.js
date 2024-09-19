@@ -73,6 +73,9 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
+	corePlugins: {
+		preflight: false,
+	},
 	plugins: [
 		require('@tailwindcss/forms'),
 		// eslint-disable-next-line no-unused-vars
