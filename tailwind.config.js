@@ -61,20 +61,9 @@ module.exports = {
 				'999': '999rem'
 			}
 		},
-		container: {
-			center: true,
-			padding: {
-				DEFAULT: '1rem',
-				md: '3rem',
-				xl: '6rem'
-			},
-		},
 	},
 	variants: {
 		extend: {},
-	},
-	corePlugins: {
-		preflight: false,
 	},
 	plugins: [
 		require('@tailwindcss/forms'),

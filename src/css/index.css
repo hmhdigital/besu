@@ -1,14 +1,14 @@
-/** Tailwind Base Styles */
-@import "tailwindcss/base";
+/** Tailwind Config File */
+@config "../../tailwind.config.js";
 
-/** Tailwind Components */
-@import "tailwindcss/components";
+/** Tailwind CSS */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
 
 /** Custom Theme Components */
 @import './custom-components.css';
 
-/** Tailwind Utilities */
-@import "tailwindcss/utilities";
-
 /** Custom Theme Utiliies */
 @import './custom-utilities.css';
+
