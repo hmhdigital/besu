@@ -1,6 +1,9 @@
 /** Tailwind Config File */
 @config "../../tailwind.config.js";
 
+/** Tailwind Forms Plugin */
+@plugin "@tailwindcss/forms";
+
 /** Tailwind CSS */
 @layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
