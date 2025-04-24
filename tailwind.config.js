@@ -7,17 +7,14 @@
  * @param {int} px The pixel value to convert to rems
  */
 
-
 const fs = require( 'fs' );
 const glob = require('glob');
-const plugin = require('tailwindcss/plugin');
 
 const themeJson = fs.readFileSync( './theme.json' );
 const theme = JSON.parse( themeJson );
 
 // eslint-disable-next-line no-unused-vars
 const rem = px => `${px / 16}rem`;
-
 
 let colors = {};
 theme.settings.color.palette.forEach(color => {
@@ -28,7 +25,6 @@ let fonts = {};
 theme.settings.typography.fontFamilies.forEach(fam => {
 	fonts[fam.slug] = fam.fontFamily.split(',');
 });
-
 
 module.exports = {
 	content: [
@@ -65,12 +61,4 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [
-		require('@tailwindcss/forms'),
-		// eslint-disable-next-line no-unused-vars
-		plugin(function({ addUtilities, addComponents, e, prefix, config }) {
-			// Add your custom styles here
-			// eslint-disable-next-line no-mixed-spaces-and-tabs
-		  }),
-	],
 };
